@@ -1,5 +1,4 @@
-
-interface Product {
+export interface Product {
     description: string;
     price: number;
 }
@@ -15,7 +14,7 @@ const table: Product = {
 }
 
 //The custom object is created to send the information to the function
-interface TaxCalculationOption {
+interface TaxCalculationOptions {
     tax: number;
     products: Product[];
 }
@@ -28,7 +27,7 @@ interface TaxCalculationOption {
 //function taxCalculation( {tax, products} : TaxCalculationOption) : [number,number]{
 
 //And finally, we can send the entire object, and inside the function, access to only those attributes:
-function taxCalculation(options: TaxCalculationOption): [number, number] {
+export function taxCalculation(options: TaxCalculationOptions): [number, number] {
     //The destructuring is used to obtain the information from the object, the total amount
     const { tax, products } = options;
 
@@ -44,7 +43,7 @@ function taxCalculation(options: TaxCalculationOption): [number, number] {
 
 //Create an array of products
 const shoppingCart = [phone, table];
-const tax = 0.15;
+export const tax = 0.15;
 //Send the values to the function and return each value in a const instead of use result[0], result[1]
 const [total, totalTax] = taxCalculation({ tax, products: shoppingCart });
 //The function returns an array, so we don't use curly braces:
