@@ -7,7 +7,8 @@ import "./style.css";
 //import "./topics/05-basic-destructuring.ts";
 //import "./topics/06-function-destructuring.ts";
 //import "./topics/07-import-export.ts"
-import "./topics/08-classes"
+//import "./topics/08-classes"
+import "./topics/09-generics"
 
 // rome-ignore lint/style/noNonNullAssertion: <explanation>
 const app = document.querySelector<HTMLDivElement>('#app')!
