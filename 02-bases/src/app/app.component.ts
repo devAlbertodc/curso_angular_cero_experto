@@ -7,13 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public titulo:String = 'Hola Mundo';
-  public counter:number = 10;
 
-  public increaseBy(value:number):void{
-    this.counter = this.counter + value;
-  }
-
-  public resetCounter(): void{
-    this.counter = 10;
-  }
 }
