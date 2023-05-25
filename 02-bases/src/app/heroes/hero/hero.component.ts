@@ -12,7 +12,7 @@ export class HeroComponent {
   //Apply transformation for a class property
   //Getters and setters are attributes, not a method
   get capitalizedName(): string {
-    return this.name.toUpperCase();
+    return this.name.toUpperCase(); 
   }
 
   getHeroDescription(): string {
