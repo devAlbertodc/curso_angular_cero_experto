@@ -1,9 +1,17 @@
 <h3>Listado de heroes:</h3>
 
-<h3>Heroe borrado <small class="text-danger">xxx</small></h3>
-<h3>No ha borrado nada</h3>
+<!--If the condition is not true, then go to else and render ng-template-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+    <h3>Heroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
+</div>
 
-<button class="btn btn-outline-danger">
+<!--Angular component, by default the content is not rendered by the browser-->
+<ng-template #nothingWasDeleted>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+<!--If there are alements in the array, render the button-->
+<button *ngIf="heroNames.length > 0" class="btn btn-outline-danger" (click)="removeLastHero()">
     Borrar último heroe
 </button>
 
