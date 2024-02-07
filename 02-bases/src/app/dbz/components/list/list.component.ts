@@ -8,6 +8,10 @@ import { Character } from '../../interfaces/character.interface';
 })
 export class ListComponent {
 
+  @Output()
+  public onDelete:EventEmitter<number> = new EventEmitter();
+
+
   //If dbz-selector does not receive the property, this will be the default content to render
   @Input()
   public characterList: Character[] = [
@@ -19,6 +23,6 @@ export class ListComponent {
 
   onDeleteCharacter(index:number):void{
     //TODO: Emit the character ID
-    console.log(index)
+    this.onDelete.emit(index)
   }
 }
